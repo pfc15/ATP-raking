@@ -20,7 +20,7 @@ for pag in range(1,number_of_pages):
     j = {}
     duplo =False
 
-    # itterating the jogadores junto to create to data frame jogadores
+    # itterating the jogadores junto to create each row of of DataFrame jogadores
     for p in range(len(jogadores_junto)):
         # fail safe if ajuste goes over the length
         if p+ajuste>len(jogadores_junto)-1:
