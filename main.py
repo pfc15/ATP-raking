@@ -8,12 +8,12 @@ caminho = "atprank.pdf"
 reader = PdfReader(caminho)
 number_of_pages = len(reader.pages)
 jogadores = pd.DataFrame(columns=["Rank", "Player", "Natl.", "Total Points", "Grand Slam Points", "Master 1000 Points", "Other Points", "Tourns. Played", "Points Dropping", "Next Best"])
-for pag in range(1,number_of_pages):
+for pag in range(0 ,number_of_pages):
     page = reader.pages[pag]
     text = page.extract_text().split() # text is the variable with full text of the page
-
+    print(text)
     # managing the text
-    data = text[5:8] # date
+    date = text[5:8] # date
     jogadores_junto = text[25:-15] #info of the players together
     
     cont = cont2 = ajuste = 0
@@ -76,7 +76,7 @@ for pag in range(1,number_of_pages):
         cont+=1
 
 
-print(data)
+print(date)
 print('-='*24)
 print(jogadores.head(2055))
 jogadores.to_excel("tabela.xlsx") # saves an excel sheet of the ranking
